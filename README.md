@@ -5,7 +5,7 @@ A boilerplate for a React + TypeScript project.
 * TypeScript
 * CSS Modules using SASS (scss)
 * Jest + Enzyme
-* TsLint
+* TSLint with an [Airbnb Config equivalent](https://gist.github.com/piotrwitek/b2030dd9b2cbc6a9396c6e508a3ee67b#gistcomment-2076262).
 
 ## Setup
 ```
