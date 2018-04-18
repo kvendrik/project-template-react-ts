@@ -41,7 +41,7 @@ module.exports = {
       template: 'index-template.html',
     }),
     new WebpackShellPlugin({
-      onBuildStart: ['yarn build:style-types app/components/**/*.scss'],
+      onBuildStart: [`yarn build:style-types ${PATHS.app}/**/*.scss`],
     }),
     new webpack.WatchIgnorePlugin([
       /scss\.d\.ts$/
