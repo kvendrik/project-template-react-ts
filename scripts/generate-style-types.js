@@ -6,6 +6,11 @@ const glob = require('glob');
 
 const creator = new DtsCreator();
 
+if (!process.argv[2]) {
+  console.log('Usage: generate-style-types \'<glob_pattern>\'');
+  process.exit(1);
+}
+
 glob(process.argv[2], {}, (error, filePaths) => {
   for (const filePath of filePaths) {
     creator.create(filePath)
