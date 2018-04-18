@@ -2,7 +2,6 @@ const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CompressionPlugin = require('compression-webpack-plugin');
 const WebpackShellPlugin = require('webpack-shell-plugin');
 
 function configHelper(paths = {}, options = {}) {
@@ -14,6 +13,7 @@ function configHelper(paths = {}, options = {}) {
   };
 
   let baseConfig = {
+    mode: process.env.PRODUCTION ? 'production' : 'development',
     devServer: {
       contentBase: PATHS.public,
       port: 9000,
@@ -56,7 +56,7 @@ function configHelper(paths = {}, options = {}) {
       ])
     ],
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.(jpe|jpg|woff|woff2|eot|ttf|svg|otf)(\?.*$|$)/,
           loader: 'file-loader',
@@ -99,28 +99,6 @@ function configHelper(paths = {}, options = {}) {
       ],
     },
   };
-
-  if (process.env.PRODUCTION) {
-    if (typeof options.ifProduction === 'function') {
-      baseConfig = options.ifProduction(baseConfig);
-    } else {
-      console.log('Building Production');
-
-      baseConfig.plugins.push(new webpack.DefinePlugin({
-        'process.env': {
-          NODE_ENV: JSON.stringify('production'),
-        },
-      }));
-
-      baseConfig.plugins.push(new webpack.optimize.UglifyJsPlugin({
-        compress: {
-          warnings: false,
-        },
-      }));
-
-      baseConfig.plugins.push(new CompressionPlugin());
-    }
-  }
 
   return baseConfig;
 }
