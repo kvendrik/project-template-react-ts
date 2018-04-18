@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import * as styles from './Button.scss';
 
-interface Props {
+export interface Props {
   children: React.ReactNode;
 }
 
