@@ -8,6 +8,7 @@
   "scripts": {
     "build": "webpack",
     "build:prod": "PRODUCTION=y webpack",
+    "build:style-types": "node scripts/generate-style-types.js",
     "serve": "webpack-dev-server --hot --inline",
     "lint": "tslint 'app/**/*.tsx' --project tsconfig.json",
     "test": "jest",
@@ -34,6 +35,8 @@
     "css-loader": "^0.23.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "friendly-typed-css-modules": "^0.4.2",
+    "glob": "^7.1.2",
     "html-webpack-plugin": "^3.2.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^22.4.3",
@@ -45,11 +48,12 @@
     "ts-jest": "^22.4.3",
     "tslint": "^5.9.1",
     "tslint-react": "^3.5.1",
+    "typed-css-modules": "^0.3.1",
     "typescript": "^2.8.1",
-    "typings-for-css-modules-loader": "^1.7.0",
     "url-loader": "^0.6.2",
     "webpack": "^2.4.1",
-    "webpack-dev-server": "^2.4.5"
+    "webpack-dev-server": "^2.4.5",
+    "webpack-shell-plugin": "^0.5.0"
   },
   "dependencies": {
     "react": "^16.2.0",

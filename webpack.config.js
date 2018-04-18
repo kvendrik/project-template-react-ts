@@ -3,6 +3,7 @@ const autoprefixer = require('autoprefixer');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
+const WebpackShellPlugin = require('webpack-shell-plugin');
 
 function configHelper(paths = {}, options = {}) {
   const dirPath = __dirname;
@@ -47,6 +48,12 @@ function configHelper(paths = {}, options = {}) {
       new HtmlWebpackPlugin({
         template: 'index-template.html',
       }),
+      new WebpackShellPlugin({
+        onBuildStart: ['yarn build:style-types'],
+      }),
+      new webpack.WatchIgnorePlugin([
+        /scss\.d\.ts$/
+      ])
     ],
     module: {
       loaders: [
@@ -59,7 +66,7 @@ function configHelper(paths = {}, options = {}) {
           loader: [
             'style-loader',
             {
-              loader: 'typings-for-css-modules-loader',
+              loader: 'css-loader',
               query: {
                 namedExport: true,
                 modules: true,
