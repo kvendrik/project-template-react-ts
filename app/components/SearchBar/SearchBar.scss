@@ -1,0 +1,23 @@
+@import 'variables';
+@import 'mixins';
+
+.Input {
+  width: 100%;
+  @include main-font;
+  font-size: 2.5rem;
+  font-weight: bold;
+
+  border: none;
+  background: transparent;
+  border-bottom: solid 3px $color-grey-lighter;
+
+  padding-bottom: 2px;
+  margin-bottom: 2rem;
+
+  transition: border-color .2s ease;
+
+  &:focus {
+    outline: none;
+    border-color: $color-accent;
+  }
+}

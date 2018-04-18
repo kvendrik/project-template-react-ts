@@ -1,0 +1,16 @@
+@import '../modules/variables';
+@import '../modules/mixins';
+
+:global {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    @include main-font;
+    color: $color-dark;
+    background: $color-grey-lightest;
+  }
+}

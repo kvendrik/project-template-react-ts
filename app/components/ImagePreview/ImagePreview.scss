@@ -1,0 +1,15 @@
+@import 'variables';
+@import 'mixins';
+
+.ImagePreview {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  padding: 0.5rem;
+  float: left;
+}
+
+.Image {
+  max-width: 100%;
+  object-fit: cover;
+}

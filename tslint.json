@@ -50,6 +50,11 @@
     "type-literal-delimiter": true,
     "typedef": [true,"parameter", "property-declaration"],
     "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case", "allow-leading-underscore"],
+    "no-import-side-effect": false,
+    "max-line-length": false,
+    "no-submodule-imports": [true, "Components"],
+    // turned off as it does not support the tsconfig.paths config option
+    "no-implicit-dependencies": false,
     // tslint-react
     "jsx-curly-spacing": ["never"],
     // tslint-eslint-rules

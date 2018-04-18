@@ -3,6 +3,7 @@ const autoprefixer = require('autoprefixer');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackShellPlugin = require('webpack-shell-plugin');
+const {TsConfigPathsPlugin} = require('awesome-typescript-loader');
 
 const PATHS = {
   app: `${__dirname}/app`,
@@ -30,6 +31,12 @@ module.exports = {
     modules: [
       path.resolve('./node_modules'),
     ],
+    plugins: [
+      new TsConfigPathsPlugin({
+        configFileName: path.resolve(`./tsconfig.json`),
+        compiler: 'typescript',
+      }),
+    ]
   },
   output: {
     path: PATHS.public,
@@ -42,10 +49,11 @@ module.exports = {
     }),
     new WebpackShellPlugin({
       onBuildStart: [`yarn build:style-types ${PATHS.app}/**/*.scss`],
+      dev: false, // make sure command runs on file change
     }),
     new webpack.WatchIgnorePlugin([
       /scss\.d\.ts$/
-    ])
+    ]),
   ],
   module: {
     rules: [

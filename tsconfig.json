@@ -1,8 +1,24 @@
 {
   "compilerOptions": {
     "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
     "removeComments": true,
     "sourceMap": true,
-    "jsx": "react"
-  }
+    "jsx": "react",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "target": "es5",
+    "lib": ["es6", "dom"],
+    "moduleResolution": "node",
+    "rootDir": "app",
+    "baseUrl": ".",
+    "paths": {
+      "Components/*": ["app/components/*"],
+    }
+  },
+  "exclude": [
+    "node_modules",
+  ]
 }
