@@ -59,7 +59,10 @@ function configHelper(paths = {}, options = {}) {
       loaders: [
         {
           test: /\.(jpe|jpg|woff|woff2|eot|ttf|svg|otf)(\?.*$|$)/,
-          loader: `${require.resolve('url-loader')}?importLoaders=1&limit=100000`,
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]'
+          }
         },
         {
           test: /\.scss$/,
