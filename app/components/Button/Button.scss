@@ -1,0 +1,9 @@
+@import 'variables';
+
+.Button {
+  background: $color-accent;
+  padding: 0.75rem 1rem;
+  color: yellow;
+  display: inline-block;
+  margin: 5rem;
+}

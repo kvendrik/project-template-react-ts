@@ -1,7 +1,6 @@
 import * as React from 'react';
 import {render} from 'react-dom';
 
-import './styles/globals/all.scss';
-import StockPhotoSearch from './components/StockPhotoSearch';
+import Button from 'Components/Button';
 
-render(<StockPhotoSearch />, document.getElementById('app'));
+render(<Button>Click me!</Button>, document.getElementById('app'));
