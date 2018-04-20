@@ -2,7 +2,6 @@ const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const WebpackShellPlugin = require('webpack-shell-plugin');
 const {TsConfigPathsPlugin} = require('awesome-typescript-loader');
 
 const PATHS = {
@@ -47,13 +46,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'index-template.html',
     }),
-    new WebpackShellPlugin({
-      onBuildStart: [`yarn build:style-types ${PATHS.app}/**/*.scss`],
-      dev: false, // make sure command runs on file change
-    }),
-    new webpack.WatchIgnorePlugin([
-      /scss\.d\.ts$/
-    ]),
   ],
   module: {
     rules: [
