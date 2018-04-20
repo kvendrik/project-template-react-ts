@@ -2,8 +2,7 @@
   "extends": [
     "tslint:recommended",
     "tslint:latest",
-    "tslint-react",
-    "tslint-eslint-rules"
+    "tslint-react"
   ],
   "rules": {
     "arrow-parens": false,
@@ -12,7 +11,7 @@
     "import-blacklist": [true, "rxjs"],
     "interface-over-type-literal": false,
     "interface-name": false,
-    "max-line-length": [true, 120],
+    "max-line-length": false,
     "member-access": false,
     "member-ordering": [true, { "order": "fields-first" }],
     "newline-before-return": false,
@@ -51,13 +50,10 @@
     "typedef": [true,"parameter", "property-declaration"],
     "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case", "allow-leading-underscore"],
     "no-import-side-effect": false,
-    "max-line-length": false,
     "no-submodule-imports": [true, "Components"],
     // turned off as it does not support the tsconfig.paths config option
     "no-implicit-dependencies": false,
     // tslint-react
-    "jsx-curly-spacing": ["never"],
-    // tslint-eslint-rules
-    "object-curly-spacing": [true, "never"]
+    "jsx-curly-spacing": ["never"]
   }
 }

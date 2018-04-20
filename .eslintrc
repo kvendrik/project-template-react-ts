@@ -1,0 +1,17 @@
+{
+  "extends": "airbnb",
+  "parser": "typescript-eslint-parser",
+  "rules": {
+    "no-undef": "off",
+    "max-len": "off",
+    "object-curly-spacing": ["error", "never"],
+    "react/jsx-filename-extension": "off",
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    "jsx-a11y/anchor-is-valid": "off"
+  },
+  "env": {
+    "browser": true,
+    "jest": true
+  }
+}
