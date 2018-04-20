@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "author": "Koen Vendrik <k.vendrik@gmail.com>",
-  "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "build": "webpack",
     "build:prod": "PRODUCTION=y webpack",
