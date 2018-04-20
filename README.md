@@ -7,6 +7,7 @@ A boilerplate for a React + TypeScript project.
 * Jest + Enzyme
 * ESLint with Airbnb Config
 * TSLint
+* Prettier
 
 ## Setup
 ```

@@ -6,4 +6,6 @@ export interface Props {
   children: React.ReactNode;
 }
 
-export default ({children}: Props) => <a className={styles.Button}>{children}</a>;
+export default ({children}: Props) => (
+  <a className={styles.Button}>{children}</a>
+);
