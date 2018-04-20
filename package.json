@@ -9,9 +9,11 @@
     "build": "webpack",
     "build:prod": "PRODUCTION=y webpack",
     "serve": "webpack-dev-server --hot --inline",
-    "lint": "yarn lint:tslint && yarn lint:eslint",
+    "lint": "yarn lint:ts && yarn lint:tslint && yarn lint:eslint",
+    "lint:ts": "tsc --noEmit",
     "lint:eslint": "eslint app --ext .tsx --ext .ts",
-    "lint:tslint": "tslint -c tslint.json --project tsconfig.json 'app/**/*.ts' 'app/**/*.tsx' --exclude 'app/**/*.d.ts'",
+    "lint:tslint":
+      "tslint -c tslint.json --project tsconfig.json 'app/**/*.ts' 'app/**/*.tsx' --exclude 'app/**/*.d.ts'",
     "test": "jest",
     "ci": "yarn lint && yarn test"
   },
