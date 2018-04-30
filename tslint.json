@@ -54,6 +54,7 @@
     // turned off as it does not support the tsconfig.paths config option
     "no-implicit-dependencies": false,
     // tslint-react
-    "jsx-curly-spacing": ["never"]
+    "jsx-curly-spacing": ["never"],
+    "jsx-boolean-value": false
   }
 }
