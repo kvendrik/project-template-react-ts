@@ -1,5 +1,3 @@
-const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {TsConfigPathsPlugin} = require('awesome-typescript-loader');
@@ -16,9 +14,7 @@ module.exports = {
     port: 9000,
     compress: true,
     historyApiFallback: {
-      rewrites: [
-        { from: /^\/[^\.]+$/, to: '/index.html' },
-      ],
+      rewrites: [{from: /^\/[^\.]+$/, to: '/index.html'}],
     },
   },
   devtool: 'cheap-module-eval-source-map',
@@ -27,15 +23,13 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
-    modules: [
-      path.resolve('./node_modules'),
-    ],
+    modules: [path.resolve('./node_modules')],
     plugins: [
       new TsConfigPathsPlugin({
         configFileName: path.resolve(`./tsconfig.json`),
         compiler: 'typescript',
       }),
-    ]
+    ],
   },
   output: {
     path: PATHS.public,
@@ -53,8 +47,8 @@ module.exports = {
         test: /\.(jpe|jpg|woff|woff2|eot|ttf|svg|otf)(\?.*$|$)/,
         loader: 'file-loader',
         options: {
-          name: '[path][name].[ext]'
-        }
+          name: '[path][name].[ext]',
+        },
       },
       {
         test: /\.scss$/,
@@ -73,7 +67,7 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              includePaths: ['./app/styles/modules'],
+              includePaths: ['./app/style-modules'],
             },
           },
         ],
@@ -85,7 +79,10 @@ module.exports = {
         query: {
           cacheDirectory: true,
           presets: ['react', 'es2015'],
-          plugins: ['transform-decorators-legacy', 'transform-object-rest-spread']
+          plugins: [
+            'transform-decorators-legacy',
+            'transform-object-rest-spread',
+          ],
         },
       },
     ],
