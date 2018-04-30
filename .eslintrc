@@ -7,6 +7,7 @@
   "rules": {
     "no-undef": "off",
     "max-len": "off",
+    "no-multi-str": "off",
     "object-curly-spacing": ["error", "never"],
     "react/jsx-filename-extension": "off",
     "import/no-unresolved": "off",
