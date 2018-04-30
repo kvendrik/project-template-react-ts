@@ -7,11 +7,13 @@
   "rules": {
     "no-undef": "off",
     "max-len": "off",
+    "no-multi-str": "off",
     "object-curly-spacing": ["error", "never"],
     "react/jsx-filename-extension": "off",
     "import/no-unresolved": "off",
     "import/extensions": "off",
-    "jsx-a11y/anchor-is-valid": "off"
+    "jsx-a11y/anchor-is-valid": "off",
+    "react/no-unescaped-entities": "off"
   },
   "env": {
     "browser": true,
