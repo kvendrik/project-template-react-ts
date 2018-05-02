@@ -11,7 +11,7 @@ A boilerplate for a React + TypeScript project.
 
 ## Setup
 ```
-git clone git@github.com:kvendrik/project-template-react-ts.git
+git clone git@github.com:kvendrik/project-template-react-ts.git your-project-name
 cd project-template-react-ts
 rm -rf .git
 rm README.md
