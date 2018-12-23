@@ -1,5 +1,4 @@
 import * as React from 'react';
-
 import * as styles from './Button.scss';
 
 export interface Props {

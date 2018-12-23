@@ -54,7 +54,7 @@
       "allow-leading-underscore"
     ],
     "no-import-side-effect": false,
-    "no-submodule-imports": true,
+    "no-submodule-imports": false,
     "jsx-no-multiline-js": false,
     // turned off as it does not support the tsconfig.paths config option
     "no-implicit-dependencies": false,
